@@ -1,0 +1,561 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    color: #1a1a1a;  
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    width: 95%;  
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px rgba(0, 105, 217, 0.1);
+}
+
+nav {
+    background-color: #0a4b6d;  
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;  
+}
+
+.settings-section {
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    will-change: transform;
+}
+
+.settings-section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 25px rgba(0, 105, 217, 0.2);
+    transform: translateY(-5px);
+    transition: all 0.3s ease-in-out;
+}
+
+.percentages-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.percentage-input {
+    flex: 1;
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.percentage-input label {
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.percentage-input input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.percentage-display {
+    margin-top: 5px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.text-center {
+    text-align: center;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: all 0.5s;
+}
+
+button:hover::before {
+    left: 100%;
+}
+
+button:hover {
+    background-color: #2980b9;
+    box-shadow: 0 10px 20px rgba(0, 105, 217, 0.3);
+    transform: translateY(-3px);
+}
+
+.input-section {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    will-change: transform;
+}
+
+.input-section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 25px rgba(0, 105, 217, 0.2);
+    transform: translateY(-5px);
+    transition: all 0.3s ease-in-out;
+}
+
+.tab-header {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+.tab-btn {
+    background-color: #e0e0e0;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+    background-color: #3498db;
+    color: white;
+}
+
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.input-group input {
+    flex: 1;
+    min-width: 200px;
+    padding: 8px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+}
+
+.distributions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.distribution-card {
+    flex: 1;
+    min-width: 150px;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    will-change: transform;
+}
+
+.distribution-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 25px rgba(0, 105, 217, 0.2);
+    transform: translateY(-5px);
+    transition: all 0.3s ease-in-out;
+}
+
+.distribution-card h3 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.distribution-card .amount {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+#capitalAmount {
+    color: #0a4b6d;  
+}
+
+#dolarAmount {
+    color: #1b5e20;  
+}
+
+#goldAmount {
+    color: #f9a825;  
+}
+
+#rentAmount {
+    color: #b71c1c;  
+}
+
+#expensesAmount {
+    color: #6a1b9a;  
+}
+
+#capitalAmount.distribution-card {
+    background-color: #0a4b6d;  
+    color: white;
+}
+
+#dolarAmount.distribution-card {
+    background-color: #1b5e20;  
+    color: white;
+}
+
+#goldAmount.distribution-card {
+    background-color: #f9a825;  
+    color: black;
+}
+
+#rentAmount.distribution-card {
+    background-color: #b71c1c;  
+    color: white;
+}
+
+#expensesAmount.distribution-card {
+    background-color: #6a1b9a;  
+    color: white;
+}
+
+.net-worth-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.net-worth-card {
+    background-color: #2ecc71;
+    color: white;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 5px;
+    animation: pulse 2s infinite;
+    box-shadow: 0 10px 25px rgba(0, 105, 217, 0.1);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.total-amount {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.charts-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.charts-section .chart-container {
+    perspective: 1000px;
+    transition: transform 0.5s;
+}
+
+.charts-section .chart-container:hover {
+    transform: rotateY(10deg);
+}
+
+.chart-container {
+    flex: 1;
+    min-width: 250px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chart-container:hover {
+    box-shadow: 0 15px 25px rgba(0, 105, 217, 0.2);
+    transform: translateY(-5px);
+    transition: all 0.3s ease-in-out;
+}
+
+.history-section {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    overflow-x: auto;  
+}
+
+.history-section h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;  
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: #3498db;
+    color: white;
+}
+
+.mt-4 {
+    margin-top: 20px;
+}
+
+@keyframes glitch-animation {
+    0% {
+        clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+    }
+    20% {
+        clip-path: polygon(0 0, 100% 0, 100% 30%, 0 70%);
+    }
+    40% {
+        clip-path: polygon(0 0, 100% 0, 100% 25%, 0 75%);
+    }
+    60% {
+        clip-path: polygon(0 0, 100% 0, 100% 20%, 0 80%);
+    }
+    80% {
+        clip-path: polygon(0 0, 100% 0, 100% 15%, 0 85%);
+    }
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+    }
+}
+
+.glitch-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.glitch {
+    position: relative;
+    color: white;
+    font-weight: bold;
+    text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff;
+    animation: glitch-animation 5s infinite linear alternate-reverse;
+}
+
+.glitch::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    left: 0.08em;
+    text-shadow: -0.03em -0.04em 0 #fc00ff;
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+    animation: glitch-animation 5s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    left: -0.08em;
+    text-shadow: -0.03em -0.04em 0 #00fffc;
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+    animation: glitch-animation 5s infinite linear alternate-reverse;
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 10px;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 105, 217, 0.1);
+}
+
+.notification.show {
+    opacity: 1;
+}
+
+.tech-header {
+  background-color: #0a4b6d;
+  padding: 20px 0;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 105, 217, 0.1);
+}
+
+.header-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.header-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.header-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.header-acronym {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #00fffc;
+  text-shadow: 0 0 10px rgba(0, 255, 252, 0.5);
+  letter-spacing: 5px;
+}
+
+.header-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+.interactive-element:hover {
+    box-shadow: 0 10px 20px rgba(0, 105, 217, 0.15);
+    transform: scale(1.02);
+    transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 98%;
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .percentages-group,
+    .input-group,
+    .distributions,
+    .charts-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .percentage-input,
+    .distribution-card,
+    .chart-container {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .input-group input {
+        margin-bottom: 10px;
+    }
+
+    .header-text {
+        font-size: 1.4rem;
+    }
+
+    .header-acronym {
+        font-size: 2rem;
+    }
+
+    .distribution-card:hover,
+    .settings-section:hover,
+    .input-section:hover {
+        box-shadow: 0 10px 20px rgba(0, 105, 217, 0.15);
+        transform: scale(1.01);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo {
+        font-size: 1rem;
+    }
+
+    .tab-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .header-text {
+        font-size: 1.2rem;
+    }
+
+    .header-acronym {
+        font-size: 1.8rem;
+    }
+}
