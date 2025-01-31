@@ -235,7 +235,7 @@ function updateCharts() {
         data: {
             labels: lastSevenDays,
             datasets: [{
-                label: 'C+I+P (Capital + Investimentos + Renda Passiva)',
+                label: 'Total de Patrimônio', 
                 data: capitalValues,
                 borderColor: '#3498db',
                 backgroundColor: 'rgba(52, 152, 219, 0.2)',
@@ -247,7 +247,7 @@ function updateCharts() {
             responsive: true, 
             title: { 
                 display: true, 
-                text: 'Projeção Diária de C+I+P' 
+                text: 'Projeção Diária de Total de Patrimônio' 
             },
             scales: {
                 y: {
@@ -265,7 +265,7 @@ function updateCharts() {
     monthlyChart = new Chart(document.getElementById('monthlyChart'), {
         type: 'bar',
         data: {
-            labels: ['Receitas', 'Despesas', 'Saldo'],
+            labels: ['Receitas', 'Despesas', 'Balanço'],
             datasets: [{
                 data: [1000, 600, 400],
                 backgroundColor: ['#2ecc71', '#e74c3c', '#3498db']

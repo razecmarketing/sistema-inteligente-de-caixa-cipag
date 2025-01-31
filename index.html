@@ -11,17 +11,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
-    <div class="theme-toggle-container">
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
-            <span class="theme-toggle-icon">🌓</span>
-        </button>
-    </div>
     <div class="container">
         <nav class="tech-header">
             <div class="header-wrapper">
                 <div class="header-title">
                     <span class="header-text">Sistema de Caixa Inteligente</span>
-                    <span class="header-acronym">CIPAG</span>
+                    <div class="header-title-row">
+                        <span class="header-acronym neon-text">CIPAG</span>
+                    </div>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+                        <span class="theme-toggle-icon">🌓</span>
+                    </button>
                 </div>
                 <div id="header-particles" class="header-particles"></div>
             </div>
@@ -108,7 +108,7 @@
 
         <section class="net-worth-section">
             <div class="net-worth-card">
-                <h3>Patrimônio Total</h3>
+                <h3>Total de Patrimônio</h3>
                 <div class="total-amount" id="totalNetWorth">R$ 0,00</div>
             </div>
         </section>

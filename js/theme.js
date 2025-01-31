@@ -6,15 +6,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme');
     const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    if (savedTheme === 'dark' || (!savedTheme && prefersDarkMode)) {
+    // Function to apply dark mode
+    function applyDarkMode() {
         body.classList.add('dark-mode');
+        themeToggle.querySelector('.theme-toggle-icon').textContent = '☀️'; // Sun icon for light mode
     }
 
+    // Function to remove dark mode
+    function removeDarkMode() {
+        body.classList.remove('dark-mode');
+        themeToggle.querySelector('.theme-toggle-icon').textContent = '🌓'; // Moon icon for dark mode
+    }
+
+    // Initial theme setup
+    if (savedTheme === 'dark' || (!savedTheme && prefersDarkMode)) {
+        applyDarkMode();
+    } else {
+        removeDarkMode();
+    }
+
+    // Theme toggle event listener
     themeToggle.addEventListener('click', () => {
-        body.classList.toggle('dark-mode');
-        
-        // Save theme preference
-        const currentTheme = body.classList.contains('dark-mode') ? 'dark' : 'light';
-        localStorage.setItem('theme', currentTheme);
+        if (body.classList.contains('dark-mode')) {
+            removeDarkMode();
+            localStorage.setItem('theme', 'light');
+        } else {
+            applyDarkMode();
+            localStorage.setItem('theme', 'dark');
+        }
     });
 });

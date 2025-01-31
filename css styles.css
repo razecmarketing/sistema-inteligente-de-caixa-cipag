@@ -14,17 +14,7 @@ body {
 
 body.dark-mode {
     background-color: #121212;  
-    color: #00fffc;  
-}
-
-body.dark-mode * {
-    text-shadow: 
-        0 0 5px #00fffc, 
-        0 0 10px #00fffc, 
-        0 0 20px #00fffc, 
-        0 0 40px #00fffc,
-        0 0 80px #00fffc;
-    color: #00fffc !important;
+    color: #e0e0e0;  
 }
 
 body.dark-mode .container {
@@ -104,10 +94,21 @@ body.dark-mode .input-section {
     text-align: center;
 }
 
-body.dark-mode input {
+body.dark-mode input,
+body.dark-mode .input-group input {
     background-color: #34495e;  
-    color: #00fffc !important;
+    color: #ecf0f1;
     border-color: #4a4a4a;  
+}
+
+body.dark-mode .percentage-input label {
+    color: #00fffc;  
+    text-shadow: 0 0 5px rgba(0, 255, 252, 0.5);  
+}
+
+body.dark-mode .percentage-display {
+    color: #00fffc;  
+    text-shadow: 0 0 5px rgba(0, 255, 252, 0.5);  
 }
 
 .percentage-display {
@@ -134,7 +135,8 @@ button {
 }
 
 body.dark-mode button {
-    color: white !important;
+    background-color: #3498db;
+    color: white;
 }
 
 button::before {
@@ -374,6 +376,28 @@ body.dark-mode .net-worth-card {
     0% { transform: scale(1); }
     50% { transform: scale(1.05); }
     100% { transform: scale(1); }
+}
+
+@keyframes neon-pulse {
+    0%, 100% {
+        text-shadow: 
+            0 0 5px #00fffc, 
+            0 0 10px #00fffc, 
+            0 0 20px #00fffc, 
+            0 0 40px #00fffc,
+            0 0 80px #00fffc;
+        opacity: 1;
+    }
+    50% {
+        text-shadow: none;
+        opacity: 0.7;
+    }
+}
+
+.neon-text {
+    color: #00fffc;
+    animation: neon-pulse 4s ease-in-out infinite; 
+    transition: all 0.3s ease;
 }
 
 .charts-section {
@@ -656,36 +680,6 @@ body.dark-mode .header-acronym {
 
 body.dark-mode #theme-toggle {
     border-color: rgba(255,255,255,0.5);
-}
-
-@keyframes neon-pulse {
-    0%, 100% {
-        text-shadow: 
-            0 0 5px #00fffc, 
-            0 0 10px #00fffc, 
-            0 0 20px #00fffc, 
-            0 0 40px #00fffc,
-            0 0 80px #00fffc;
-        opacity: 1;
-    }
-    50% {
-        text-shadow: none;
-        opacity: 0.7;
-    }
-}
-
-.neon-text {
-    color: #00fffc;
-    animation: neon-pulse 4s ease-in-out infinite; 
-    transition: all 0.3s ease;
-}
-
-body.dark-mode .chart-container,
-body.dark-mode .header-particles,
-body.dark-mode input,
-body.dark-mode button {
-    text-shadow: none !important;
-    color: inherit !important;
 }
 
 @media screen and (max-width: 768px) {
