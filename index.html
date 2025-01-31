@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Fluxo de Caixa Inteligente - CIPAG</title>
+    <title>Sistema de Caixa Inteligente - CIPAG</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="/styles.css">
@@ -11,11 +11,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
+    <div class="theme-toggle-container">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+            <span class="theme-toggle-icon">🌓</span>
+        </button>
+    </div>
     <div class="container">
         <nav class="tech-header">
             <div class="header-wrapper">
                 <div class="header-title">
-                    <span class="header-text">Sistema de Fluxo de Caixa Inteligente</span>
+                    <span class="header-text">Sistema de Caixa Inteligente</span>
                     <span class="header-acronym">CIPAG</span>
                 </div>
                 <div id="header-particles" class="header-particles"></div>
@@ -148,5 +153,6 @@
 
     <script src="/js/app.js"></script>
     <script src="/js/header-effects.js"></script>
+    <script src="/js/theme.js"></script>
 </body>
 </html>
