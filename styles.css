@@ -538,7 +538,7 @@ body.dark-mode .header-acronym {
 
 .theme-toggle-container {
     position: fixed;
-    top: 40px;  
+    bottom: 20px;  
     right: 20px;
     z-index: 1000;
 }
