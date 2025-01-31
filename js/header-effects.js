@@ -39,7 +39,8 @@ class HeaderParticles {
     geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
 
     const material = new THREE.PointsMaterial({
-      size: 0.08,EMPLARY      vertexColors: true,
+      size: 0.08,      
+      vertexColors: true,
       transparent: true,
       opacity: 0.9  
     });
